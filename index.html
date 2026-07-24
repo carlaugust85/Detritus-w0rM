@@ -1,18 +1,22 @@
-<meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio & Media</title>
+  <title>Detritus-w0rM | HATESCAPE</title>
   <style>
-    /* Dark theme styling */
+    /* Dark Radioactive Theme */
     :root {
-      --bg-color: #121212;
-      --card-bg: #1e1e1e;
-      --accent-color: #bb86fc;
+      --bg-color: #0a0a0a;
+      --card-bg: #141414;
+      --accent-color: #39ff14; /* Radioactive Neon Green */
       --text-color: #e0e0e0;
-      --text-dim: #a0a0a0;
+      --text-dim: #888888;
+      --glow: 0 0 10px rgba(57, 255, 20, 0.4);
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       margin: 0;
@@ -26,6 +30,18 @@
       width: 100%;
     }
 
+    /* Banner Image Styling */
+    .banner-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .banner-img {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(var(--glow));
+    }
+
     header {
       text-align: center;
       margin-bottom: 40px;
@@ -33,34 +49,54 @@
 
     h1 {
       margin-bottom: 8px;
+      color: var(--accent-color);
+      text-shadow: var(--glow);
+      font-size: 2rem;
+      letter-spacing: 2px;
     }
 
     p.subtitle {
       color: var(--text-dim);
       margin-top: 0;
+      font-style: italic;
     }
 
     section {
       background: var(--card-bg);
+      border: 1px solid #222;
       border-radius: 8px;
       padding: 24px;
       margin-bottom: 24px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     }
 
     h2 {
       margin-top: 0;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid #282828;
       padding-bottom: 10px;
       color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    /* Media element responsiveness */
-    video {
-      width: 100%;
-      height: auto;
+    /* Responsive YouTube Container */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
       border-radius: 6px;
-      background-color: #000;
+      border: 1px solid var(--accent-color);
+      box-shadow: var(--glow);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .track-list {
@@ -78,6 +114,7 @@
     .track-title {
       font-weight: 600;
       font-size: 0.95rem;
+      color: var(--accent-color);
     }
 
     audio {
@@ -89,29 +126,39 @@
 <body>
 
   <div class="container">
+    
+    <!-- 1. BAND BANNER TOP -->
+    <div class="banner-container">
+      <!-- Ensure logo.png or your banner image file is in the same directory -->
+      <img src="logo.png" alt="Detritus-w0rM Banner" class="banner-img" onerror="this.style.display='none'">
+    </div>
+
     <header>
-      <h1>Welcome To The HATESCAPE!</h1>
-      <p class="subtitle">behind the scenes mobile DAW vocal workflow sneak peek</p>
+      <h1>WELCOME TO THE HATESCAPE</h1>
+      <p class="subtitle">Behind the scenes mobile DAW vocal workflow sneak peek</p>
     </header>
 
-    <!-- Video Section -->
+    <!-- 2. MAIN VOCAL WORKFLOW VIDEO -->
     <section id="video-section">
-      <h2>sermons from the void</h2>
-      <!-- Replace 'assets/video-clip.mp4' with your actual file path -->
-      <video controls poster="assets/thumbnail.jpg">
-        <source src="assets/video-clip.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <h2>Sermons From The Void</h2>
+      <div class="video-wrapper">
+        <!-- REPLACE 'YOUR_VOCAL_VIDEO_ID' WITH YOUR YOUTUBE VIDEO ID -->
+        <iframe 
+          src="https://www.youtube.com/embed/shorts/6RIjAAEOCWc?is=rss07UHsDbZ9-ty-" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
     </section>
 
-    <!-- Audio Section -->
+    <!-- 3. MUSIC TRACKS SECTION -->
     <section id="audio-section">
       <h2>Music Tracks</h2>
       <div class="track-list">
         
         <!-- Track 1 -->
         <div class="track">
-          <span class="track-title">The Bob Ross Hatescape-</span>
+          <span class="track-title">The Bob Ross Hatescape</span>
           <audio controls controlslist="nodownload">
             <source src="Detritus(w0rM)%20The%20Bob%20Ross%20Hatescape.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
@@ -120,7 +167,7 @@
 
         <!-- Track 2 -->
         <div class="track">
-          <span class="track-title">Atlas Switch Thrown-</span>
+          <span class="track-title">Atlas Switch Thrown</span>
           <audio controls controlslist="nodownload">
             <source src="Atlas%20Again.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
@@ -129,6 +176,20 @@
 
       </div>
     </section>
+
+    <!-- 4. SECOND VIDEO SECTION -->
+    <section id="second-video-section">
+      <h2>Live Showcase / Performance</h2>
+      <div class="video-wrapper">
+        <!-- REPLACE 'YOUR_SECOND_VIDEO_ID' WITH YOUR SECOND YOUTUBE VIDEO ID -->
+        <iframe 
+          src="https://www.youtube.com/embed/shorts/TYnCWl5_S1w?is=KGJ_WJw83xlZYNw-" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
   </div>
 
 </body>
